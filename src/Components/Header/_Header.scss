@@ -1,0 +1,15 @@
+nav {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  background-color: rgb(175, 175, 175);
+
+  .searchBtn {
+    border: none;
+    background-color: transparent;
+  }
+}
