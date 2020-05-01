@@ -1,9 +1,10 @@
 .formContainer {
-  margin-top: 25px;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 
   .formGroup {
     width: 30%;
@@ -19,5 +20,10 @@
       border: 1px solid rgb(75, 75, 75);
       border-radius: 10px;
     }
+  }
+
+  .loginError {
+    margin: 10px 0;
+    font-size: 1em;
   }
 }

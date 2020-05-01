@@ -1,18 +1,42 @@
-import React, {useContext} from 'react';
-import {FormGroup, FormControl, FormLabel} from 'react-bootstrap';
-import { StateContext } from '../../context/stateContext'; 
+import React, {useState, useContext} from 'react';
+import {FormGroup, FormControl, FormLabel, Alert} from 'react-bootstrap';
+import { CookieContext } from '../../context/cookieContext';
+import axios from 'axios';
 
-export default function Login() {
+export default function Login( {history} ) {
 
-const [state, setState] = useContext(StateContext);
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
+const [errorMessage, setErrorMessage] = useState(null);
+const [hasError, setHasError] = useState(false);
 
-const handleValues = e => {
-  setState({...state, [e.target.name]: e.target.value})
-}
+const [, setUUID] = useContext(CookieContext)
 
-const handleSubmit = e => {
+const handleSubmit = async e => {
   e.preventDefault();
-  console.log(state)
+
+  try {
+    let res = await axios.post(`http://localhost:7000/signin/uuid`,
+      {
+        username,
+        password
+      },
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
+
+    res.data.uuid && setUUID(res.data.uuid)
+    console.log('uuid ', res.data.uuid)
+    setHasError(false)
+
+  } catch(err) {
+    setHasError(true);
+    setErrorMessage('Username or Password is incorrect!');
+    console.error(err.message)
+  }
 }
 
   return (
@@ -20,14 +44,20 @@ const handleSubmit = e => {
 
         <FormGroup className="mb-3 formGroup" controlId='formBasicEmail' >
           <FormLabel className='formLabel'>Username</FormLabel>
-          <FormControl className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={state.username} onChange={handleValues}/> 
+          <FormControl className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={username} onChange={e => setUsername(e.target.value)}/> 
         </FormGroup>
 
         <FormGroup className="mb-3 formGroup">
           <FormLabel className='formLabel'>Password</FormLabel>
-          <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={state.password} onChange={handleValues}/> 
+          <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={password} onChange={e => setPassword(e.target.value)}/> 
         </FormGroup>
 
+      {hasError && 
+        <h5 className='loginError'>
+          <Alert variant={'danger'} size='sm'>{errorMessage}</Alert>
+        </h5>
+      }
+      
         <button type='submit' className='btn btn-secondary'>Login</button>
       </form>
   )
