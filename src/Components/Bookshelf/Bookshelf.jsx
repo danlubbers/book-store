@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-export default function Bookshelf() {
+const Bookshelf = () => {
   return (
     <div>
-      <h1>Bookshelf Page</h1>
+      <h1>Book Shelf Test</h1>
     </div>
   )
 }
+
+export default Bookshelf;

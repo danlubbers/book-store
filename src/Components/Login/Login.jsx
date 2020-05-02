@@ -3,7 +3,7 @@ import {FormGroup, FormControl, FormLabel, Alert} from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 import axios from 'axios';
 
-export default function Login( {history} ) {
+function Login(props) {
 
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
@@ -28,9 +28,10 @@ const handleSubmit = async e => {
       }
     )
 
-    res.data.uuid && setUUID(res.data.uuid)
     console.log('uuid ', res.data.uuid)
-    setHasError(false)
+    res.data.uuid && setUUID(res.data.uuid)
+    props.history.push('/cookie/bookshelf')
+    
 
   } catch(err) {
     setHasError(true);
@@ -57,8 +58,10 @@ const handleSubmit = async e => {
           <Alert variant={'danger'} size='sm'>{errorMessage}</Alert>
         </h5>
       }
-      
+
         <button type='submit' className='btn btn-secondary'>Login</button>
       </form>
   )
 }
+
+export default Login;

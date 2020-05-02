@@ -4,12 +4,12 @@ import { CookieProvider } from "./context/cookieContext";
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
 
-function App() {
+function App({history}) {
   return (
     <CookieProvider>
         <div className="App">
           <Header />
-          <Login />
+          <Login history={history}/>
         </div>
     </CookieProvider>
   );
