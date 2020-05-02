@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from '../Header/Header';
 
 const Bookshelf = () => {
   return (
-    <div>
+    <>
+      <Header />
       <h1>Book Shelf Test</h1>
-    </div>
+    </>
   )
 }
 

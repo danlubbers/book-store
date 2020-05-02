@@ -1,14 +1,15 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
   return (
     <header>
       <nav>
-        <h1> BookShelf </h1>
-        <h4> <button className='searchBtn'><FontAwesomeIcon icon={faSearch} size='sm'/></button> Search </h4>
+        <Link to='/cookie/bookshelf'> <h1> BookShelf </h1></Link>
+        <Link to='/cookie/search'><h4><FontAwesomeIcon icon={faSearch} size='sm'/> Search </h4></Link>
       </nav>
     </header>
   )

@@ -17,9 +17,9 @@ export const ProtectedRoutes = ({
           <Component {...propsFromReactRouter} />
         ) : (
           <Redirect 
-          to='/' 
-          {...propsFromReactRouter} 
-          {...rest}
+            to='/' 
+            {...propsFromReactRouter} 
+            {...rest}
           />
         )
       }}
