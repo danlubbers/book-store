@@ -2,13 +2,15 @@ import React, {useState, useContext} from "react";
 import "./App.scss";
 import axios from 'axios';
 import { CookieProvider, CookieContext } from "./context/cookieContext";
+import { getSessionCookie } from './utils/Cookies.util'; 
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
 
 function App({history}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [loggedIn] = useState('You are already logged in!');
+  const [errorMessage] = useState('Username or Password is incorrect!');
   const [hasError, setHasError] = useState(false);
 
   const [uuid, setUUID] = useContext(CookieContext);
@@ -32,12 +34,12 @@ function App({history}) {
       console.log('uuid ', uuid);
       res.data.uuid && setUUID(res.data.uuid);
       history.push('/cookie/bookshelf')
-      
   
     } catch(err) {
       setHasError(true);
-      setErrorMessage('Username or Password is incorrect!');
+      setPassword('')
       console.error(err.message)
+      
     }
   }
   return (
@@ -50,9 +52,11 @@ function App({history}) {
             setUsername={setUsername}
             password={password}
             setPassword={setPassword}
+            loggedIn={loggedIn}
             errorMessage={errorMessage}
             hasError={hasError}
-            />
+            getSessionCookie={getSessionCookie}
+          />
         </div>
     </CookieProvider>
   );

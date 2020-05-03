@@ -8,13 +8,19 @@ function Login(props) {
 
         <FormGroup className="mb-3 formGroup" controlId='formBasicEmail' >
           <FormLabel className='formLabel'>Username</FormLabel>
-          <FormControl className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={props.username} onChange={e => props.setUsername(e.target.value)}/> 
+          <FormControl className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={props.username} onChange={e => props.setUsername(e.target.value)} disabled={!!props.getSessionCookie()}/> 
         </FormGroup>
 
         <FormGroup className="mb-3 formGroup">
           <FormLabel className='formLabel'>Password</FormLabel>
-          <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={props.password} onChange={e => props.setPassword(e.target.value)}/> 
+          <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={props.password} onChange={e => props.setPassword(e.target.value)} disabled={!!props.getSessionCookie()}/> 
         </FormGroup>
+
+      {!!props.getSessionCookie() && 
+        <h5 className='loginError'>
+          <Alert variant={'success'} size='sm'>{props.loggedIn}</Alert>
+        </h5>
+      }  
 
       {props.hasError && 
         <h5 className='loginError'>
@@ -22,7 +28,7 @@ function Login(props) {
         </h5>
       }
     
-       <button type='submit' className='btn btn-secondary'>Login</button>
+       <button type='submit' className='btn btn-secondary' disabled={!!props.getSessionCookie()}>Login</button>
      
       </form>
   )
