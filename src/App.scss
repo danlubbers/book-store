@@ -7,6 +7,9 @@ $font-family: 'Montserrat', sans-serif;
 // Component Imports
 @import './Components/Login/Login';
 @import './Components/Header/Header';
+@import './Components/Search/Search';
+@import './Components/Bookshelf/Bookshelf';
+@import './Components/BookDetails/BookDetails';
 
 
 .App {

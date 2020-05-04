@@ -27,8 +27,11 @@ function Login(props) {
           <Alert variant={'danger'} size='sm'>{props.errorMessage}</Alert>
         </h5>
       }
-    
-       <button type='submit' className='btn btn-secondary' disabled={!!props.getSessionCookie()}>Login</button>
+
+      <span>
+        <button type='submit' className='btn btn-secondary' disabled={!!props.getSessionCookie()}>Login</button>
+        <button type='text' className='btn btn-secondary' disabled={!props.getSessionCookie()} onClick={props.destroySessionCookie}>Logout</button>
+      </span>
      
       </form>
   )
