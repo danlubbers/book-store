@@ -13,37 +13,32 @@ export default function Search() {
   const [books, setBooks] = useState([]);
 
 
-  const searchBooks = async () => {
+  const searchBooks = async (e) => {
+    e.preventDefault();
 
       try {
         setIsLoading(true)
         const res = await axios.get(`http://localhost:7000/book/search/${search}?id=${uuid}`);
         setBooks(res.data.books);
-
-        console.log(res.data.books)
         setIsLoading(false)
         
       } catch(err) {
         console.error(err);
       }
     }
-    
-    console.log(books)
-
-
 
   return (
     <>
       <Header />
 
       <div className='search-container'>
-        <h1>Search Page</h1>
-        <FormGroup className="mb-3 searchGroup">
-          <FormControl className='inputSearch' type="text" placeholder='Search' aria-label="Search" name='search' value={search} onChange={e => setSearch(e.target.value)}/> 
-    
-          <button type='submit' className='btn btn-secondary searchBtn' onClick={searchBooks}>Search</button>
-         
-        </FormGroup>
+        <h1>Search</h1>
+        <form onSubmit={searchBooks}> 
+          <FormGroup className="mb-3 searchGroup">
+            <FormControl className='inputSearch' type="text" placeholder='Search' aria-label="Search" name='search' value={search} onChange={e => setSearch(e.target.value)}/>       
+            <button type='submit' className='btn btn-secondary searchBtn'>Search</button>            
+          </FormGroup>
+        </form>
 
         {isLoading &&
           <Spinner animation="border" role="status">
@@ -54,6 +49,7 @@ export default function Search() {
         {books.map((book, i) => {
           return <div key={i} className='book-container'>
             <div className='book-image'>
+              {/* Check if there are images in the api and display, if not use default image */}
               {book.imageLinks 
                 ?  <img src={book.imageLinks.thumbnail} alt={book.title} />
                 :  <img src={noImage} style={{width: '128px'}} alt={book.title} /> 
@@ -63,13 +59,18 @@ export default function Search() {
               <h5>{book.title}</h5>
               <p>{book.subtitle}</p>
               <h6>
-                {book.authors.length > 1 
-                  ? book.authors.map((author, i) => {
-                    return <div key={i}> 
-                      <h6>{author}</h6>
-                    </div>
-                  })
-                  : book.authors
+                {/* This checks if there are not authors listed */}
+                {!book.authors 
+                  ? null 
+                  // This checks if there are more than one author and this loops over the array of authors to display them correctly
+                  : book.authors.length > 1 
+                    ? book.authors.map((author, i) => {
+                      return <div key={i}> 
+                        <h6>{author}</h6>
+                      </div>
+                    })
+                    // If only one author is found, display that author
+                    : book.author
                 }
               </h6>
             </div>
