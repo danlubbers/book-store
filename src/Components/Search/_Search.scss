@@ -24,5 +24,22 @@
     }
   }
 
+  .book-container {
+    width: 65%;
+    margin: 25px 0;
+    display: flex;
+    justify-content: flex-start;
+    
+    .book-image {
+      
+    }
+    
+    .book-info {
+      margin-left: 25px;
+      display: flex;
+      flex-direction: column;
+      
+    }
+  }
   
 }
