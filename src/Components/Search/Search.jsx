@@ -31,6 +31,7 @@ export default function Search() {
     console.log(books)
 
 
+
   return (
     <>
       <Header />
@@ -61,7 +62,16 @@ export default function Search() {
             <div className='book-info'>
               <h5>{book.title}</h5>
               <p>{book.subtitle}</p>
-              <h5>{book.authors}</h5>
+              <h6>
+                {book.authors.length > 1 
+                  ? book.authors.map((author, i) => {
+                    return <div key={i}> 
+                      <h6>{author}</h6>
+                    </div>
+                  })
+                  : book.authors
+                }
+              </h6>
             </div>
           </div>
         })}
