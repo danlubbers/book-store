@@ -27,6 +27,8 @@ export default function Search() {
       }
     }
 
+    // console.log(books)
+
   return (
     <>
       <Header />
@@ -46,36 +48,41 @@ export default function Search() {
           </Spinner> 
         }
 
-        {books.map((book, i) => {
-          return <div key={i} className='book-container'>
-            <div className='book-image'>
-              {/* Check if there are images in the api and display, if not use default image */}
-              {book.imageLinks 
-                ?  <img src={book.imageLinks.thumbnail} alt={book.title} />
-                :  <img src={noImage} style={{width: '128px'}} alt={book.title} /> 
-              }
-            </div>
-            <div className='book-info'>
-              <h5>{book.title}</h5>
-              <p>{book.subtitle}</p>
-              <h6>
-                {/* This checks if there are not authors listed */}
-                {!book.authors 
-                  ? null 
-                  // This checks if there are more than one author and this loops over the array of authors to display them correctly
-                  : book.authors.length > 1 
-                    ? book.authors.map((author, i) => {
-                      return <div key={i}> 
-                        <h6>{author}</h6>
-                      </div>
-                    })
-                    // If only one author is found, display that author
-                    : book.author
-                }
-              </h6>
-            </div>
-          </div>
-        })}
+        {!books 
+          ? <h4>No search were found!</h4>
+          :  books.map((book, i) => {
+              return <div key={i} className='book-container'>
+                <div className='book-image'>
+                  {/* Check if there are images in the api and display, if not use default image */}
+                  {book.imageLinks 
+                    ?  <img src={book.imageLinks.thumbnail} alt={book.title} />
+                    :  <img src={noImage} style={{width: '128px'}} alt={book.title} /> 
+                  }
+                </div>
+                <div className='book-info'>
+                  <h5>{book.title}</h5>
+                  {/* Check if there is a subtitle and if there is not does not render a blank space for nicer readability */}
+                  {book.subtitle && 
+                    <p>{book.subtitle}</p>
+                  }
+                  <h6>
+                    {/* This checks if there are not authors listed */}
+                    {!book.authors 
+                      ? null 
+                      // This checks if there are more than one author and this loops over the array of authors to display them correctly
+                      : book.authors.length > 1 
+                        ? book.authors.map((author, i) => {
+                          return <div key={i}> 
+                            <h6>{author}</h6>
+                          </div>
+                        })
+                        // If only one author is found, display that author
+                        : book.authors
+                    }
+                  </h6>
+                </div>
+              </div>
+            })}
       
       </div>
 
