@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect} from 'react';
 import Header from '../Header/Header';
+import { Spinner } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 // import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
@@ -8,17 +9,17 @@ export default function BookDetails(props) {
 
   const [uuid, ] = useContext(CookieContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [bookDetails, setBookDetails] = useState({});
+  const [bookDetails, setBookDetails] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
-        // setIsLoading(true)
+        setIsLoading(true)
         const slug = props.match.params.slug;
         // console.log(slug)
         const res = await axios.get(`http://localhost:7000/book/${slug}?id=${uuid}`);
         setBookDetails(res.data.book);
-        // setIsLoading(false);
+        setIsLoading(false);
 
       } catch(err) {
           console.error(err)
@@ -34,11 +35,46 @@ export default function BookDetails(props) {
       <>
         <Header />
         <div className='book-details-container'>
-          <h1>Book Details Page</h1>
+        
+        {isLoading &&
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner> 
+        }
 
           <div className='book-details'>
-            <img src={bookDetails.imageLinks} alt={bookDetails.title}/>
-            <h2>{bookDetails.title}</h2>
+            <div className='details-top'>
+              {bookDetails.imageLinks 
+                && <img src={bookDetails.imageLinks.thumbnail} alt={bookDetails.title}/>
+                // :  <img src={noImage} style={{width: '128px'}} alt={bookDetails.title} /> 
+              }
+              <div className='details-top-right'>
+                <h6>
+                      {/* This checks if there are not authors listed */}
+                      {!bookDetails.authors 
+                        ? null 
+                        // This checks if there are more than one author and this loops over the array of authors to display them correctly
+                        : bookDetails.authors.length > 1 
+                        ? bookDetails.authors.map((author, i) => {
+                          return <div key={i}> 
+                              <h6 className='book-author'>{author}</h6>
+                            </div>
+                          })
+                          // If only one author is found, display that author
+                          : <h6 className='book-author'> {bookDetails.authors} </h6>
+                        }
+                    </h6>
+                    <h6>{bookDetails.publishedDate}</h6>
+                    <h6>{bookDetails.publisher}</h6>
+                </div>
+              </div>
+              <div className='details-bottom'>
+                <h2 className='book-title'>{bookDetails.title}</h2>
+                <h5 className='book-subtitle'>{bookDetails.subtitle}</h5>
+                <p className='book-description'>{bookDetails.description}</p>
+                <h6 className='book-categories'>{bookDetails.categories}</h6>
+              </div>
+
           </div>
         </div>
 
