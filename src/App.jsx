@@ -5,6 +5,7 @@ import { CookieProvider, CookieContext } from "./context/cookieContext";
 import { getSessionCookie, destroySessionCookie } from './utils/Cookies.util'; 
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
+import { BookProvider } from "./context/bookContext";
 
 function App({history}) {
   const [username, setUsername] = useState('');
@@ -48,6 +49,7 @@ function App({history}) {
 
   return (
     <CookieProvider>
+      <BookProvider>
         <div className="App">
           <Header />
           <Login 
@@ -63,6 +65,7 @@ function App({history}) {
             destroySessionCookie={destroySessionCookie}
           />
         </div>
+      </BookProvider>
     </CookieProvider>
   );
 }

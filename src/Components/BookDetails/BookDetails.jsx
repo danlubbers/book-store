@@ -68,7 +68,8 @@ export default function BookDetails(props) {
                 <h6>{bookDetails.publishedDate}</h6>
                 <h6>{bookDetails.publisher}</h6>
 
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant='secondary'>
+                
+                <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
                   <Dropdown.Item href="#/action-1">Want to Read </Dropdown.Item>
                   <Dropdown.Item href="#/action-2">Currently Reading</Dropdown.Item>
                   <Dropdown.Item href="#/action-3">Read</Dropdown.Item>

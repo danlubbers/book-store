@@ -4,10 +4,14 @@ export const BookContext = createContext();
 
 export const BookProvider = ({ children }) => {
 
-  const [book, setBook] = useState({});
+  const [books, setBooks] = useState({
+    "wantToRead": [],
+    "currentlyReading": [],
+    "read": []
+  });
 
   return (
-    <BookContext.Provider value={[book, setBook]}>
+    <BookContext.Provider value={[books, setBooks]}>
         {children}
     </BookContext.Provider>
   )
