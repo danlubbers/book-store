@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import Header from '../Header/Header';
 import { FormGroup, FormControl, Spinner } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
-import { BookContext } from '../../context/bookContext';
+import { BooksContext } from '../../context/booksContext';
 import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -12,8 +12,8 @@ export default function Search() {
   const [uuid, ] = useContext(CookieContext);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [, setBook] = useContext(BookContext);
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useContext(BooksContext);
+  // const [books, setBooks] = useState([]);
 
 
   const searchBooks = async (e) => {
@@ -29,6 +29,8 @@ export default function Search() {
         console.error(err);
       }
     }
+
+    console.log({books})
 
   return (
     <>
@@ -51,7 +53,8 @@ export default function Search() {
 
         {!books 
           ? <h4>No search were found!</h4>
-          :  books.map((book, i) => {
+          // Fixed issue where books.map was undefined due to data not being retrieved 
+          : books.length > 1 && books.map((book, i) => {
               const slug = book.id;
               return <div key={i} className='book-container'>
                 <div className='book-image'>
@@ -62,7 +65,7 @@ export default function Search() {
                   }
                 </div>
                 <div className='book-info'>
-                  <Link to={`/cookie/book/${slug}`} onClick={() => setBook(book)}>
+                  <Link to={`/cookie/book/${slug}`} onClick={() => setBooks(book)}>
                     <h5>{book.title}</h5>
                   </Link>
                   {/* Check if there is a subtitle and if there is not does not render a blank space for nicer readability */}

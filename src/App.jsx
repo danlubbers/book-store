@@ -5,7 +5,7 @@ import { CookieProvider, CookieContext } from "./context/cookieContext";
 import { getSessionCookie, destroySessionCookie } from './utils/Cookies.util'; 
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
-import { BookProvider } from "./context/bookContext";
+import { BooksProvider } from "./context/booksContext";
 
 function App({history}) {
   const [username, setUsername] = useState('');
@@ -49,23 +49,23 @@ function App({history}) {
 
   return (
     <CookieProvider>
-      <BookProvider>
-        <div className="App">
-          <Header />
-          <Login 
-            onSubmit={handleSubmit}
-            username={username}
-            setUsername={setUsername}
-            password={password}
-            setPassword={setPassword}
-            loggedIn={loggedIn}
-            errorMessage={errorMessage}
-            hasError={hasError}
-            getSessionCookie={getSessionCookie}
-            destroySessionCookie={destroySessionCookie}
-          />
-        </div>
-      </BookProvider>
+        <BooksProvider>
+          <div className="App">
+            <Header />
+            <Login 
+              onSubmit={handleSubmit}
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              loggedIn={loggedIn}
+              errorMessage={errorMessage}
+              hasError={hasError}
+              getSessionCookie={getSessionCookie}
+              destroySessionCookie={destroySessionCookie}
+            />
+          </div>
+        </BooksProvider>
     </CookieProvider>
   );
 }

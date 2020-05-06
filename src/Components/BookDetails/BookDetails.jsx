@@ -50,7 +50,7 @@ export default function BookDetails(props) {
                 // :  <img src={noImage} style={{width: '128px'}} alt={bookDetails.title} /> 
               }
               <div className='details-top-right'>
-                <h6>
+                
                   {/* This checks if there are not authors listed */}
                     {!bookDetails.authors 
                       ? null 
@@ -64,7 +64,7 @@ export default function BookDetails(props) {
                         // If only one author is found, display that author
                       : <h6 className='book-author'> {bookDetails.authors} </h6>
                     }
-                </h6>
+                
                 <h6>{bookDetails.publishedDate}</h6>
                 <h6>{bookDetails.publisher}</h6>
 

@@ -1,14 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Header from '../Header/Header';
 import { CookieContext } from '../../context/cookieContext';
+import { BooksContext } from '../../context/booksContext';
 import axios from 'axios';
 import ShelfCategory from './ShelfCategory/ShelfCategory';
-import { BookContext } from '../../context/bookContext';
 
-export default function Bookshelf(props) {
+export default function Bookshelf() {
 
   const [uuid, ] = useContext(CookieContext);
-  const [books, setBooks] = useContext(BookContext);
+  const [books, setBooks] = useContext(BooksContext);
 
   useEffect(() => {
     ( async () => {
@@ -24,7 +24,7 @@ export default function Bookshelf(props) {
     )();
   }, [uuid, setBooks]);
   
-  console.log(books['wantToRead'])
+  console.log(books)
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function Bookshelf(props) {
 
       <div className='bookshelf-container'>
 
-        {/* <h1>Book Shelf</h1> */}
+        <h1>Book Shelf</h1>
 
         <ShelfCategory 
           title='Want to Read: '
