@@ -32,18 +32,14 @@ export default function BookDetails(props) {
       }
     }
     )()
-  }, [uuid, props.match.params.slug])
+  }, [uuid, props.match.params.slug]);
+
 
   const changeShelf = async (e) => {
-    console.log('changeShelf', e.target.name);
     const shelf = e.target.name;
     const slug = props.match.params.slug;
     try {
-      const res = await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`)
-
-      console.log('slug ', slug)
-      console.log('shelf ', shelf)
-      console.log('res ', res)
+      await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`)
       
     } catch(err) {
       console.log(err)
@@ -94,6 +90,7 @@ export default function BookDetails(props) {
 
                   
                   <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
+                    <Dropdown.Item name='none' onClick={changeShelf}>None </Dropdown.Item>
                     <Dropdown.Item name='wantToRead' onClick={changeShelf}>Want to Read </Dropdown.Item>
                     <Dropdown.Item name='currentlyReading' onClick={changeShelf}>Currently Reading</Dropdown.Item>
                     <Dropdown.Item name='read' onClick={changeShelf}>Read</Dropdown.Item>
