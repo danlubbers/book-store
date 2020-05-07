@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import Header from '../Header/Header';
-import { FormGroup, FormControl, Spinner } from 'react-bootstrap';
+import { FormGroup, FormControl, Spinner, Alert } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 import { BooksContext } from '../../context/booksContext';
 import noImage from '../../assets/no-image-found.svg';
@@ -13,8 +13,8 @@ export default function Search() {
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [books, setBooks] = useContext(BooksContext);
-  // const [books, setBooks] = useState([]);
-
+  const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('No search results were found!');
 
   const searchBooks = async (e) => {
     e.preventDefault();
@@ -24,13 +24,15 @@ export default function Search() {
         const res = await axios.get(`http://localhost:7000/book/search/${search}?id=${uuid}`);
         setBooks(res.data.books);
         setIsLoading(false)
+        setHasError(false);
         
       } catch(err) {
-        console.error(err);
+          setHasError(true);
+          console.error(err);
       }
     }
 
-    console.log({books})
+    // console.log({books})
 
   return (
     <>
@@ -45,14 +47,14 @@ export default function Search() {
           </FormGroup>
         </form>
 
-        {isLoading &&
+        {isLoading && !hasError && 
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
           </Spinner> 
         }
 
-        {!books 
-          ? <h4>No search were found!</h4>
+        {!books || hasError
+          ? <Alert variant='danger'>{errorMessage}</Alert>
           // Fixed issue where books.map was undefined due to data not being retrieved 
           : books.length > 1 && books.map((book, i) => {
               const slug = book.id;

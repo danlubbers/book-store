@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import { Spinner } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 // import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
 
@@ -11,6 +12,8 @@ export default function BookDetails(props) {
   const [uuid, ] = useContext(CookieContext);
   const [isLoading, setIsLoading] = useState(false);
   const [bookDetails, setBookDetails] = useState([]);
+  const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -23,7 +26,9 @@ export default function BookDetails(props) {
         setIsLoading(false);
 
       } catch(err) {
-          console.error(err)
+          setHasError(true);
+          setErrorMessage(err.message)
+          console.error(err.message)
       }
     }
     )()
@@ -37,56 +42,59 @@ export default function BookDetails(props) {
         <Header />
         <div className='book-details-container'>
         
-        {isLoading &&
+        {isLoading && !hasError &&
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
           </Spinner> 
         }
 
-          <div className='book-details'>
-            <div className='details-top'>
-              {bookDetails.imageLinks 
-                && <img src={bookDetails.imageLinks.thumbnail} alt={bookDetails.title}/>
-                // :  <img src={noImage} style={{width: '128px'}} alt={bookDetails.title} /> 
-              }
-              <div className='details-top-right'>
-                
-                  {/* This checks if there are not authors listed */}
-                    {!bookDetails.authors 
-                      ? null 
-                      // This checks if there are more than one author and this loops over the array of authors to display them correctly
-                      : bookDetails.authors.length > 1 
-                      ? bookDetails.authors.map((author, i) => {
-                        return <div key={i}> 
-                          <h6 className='book-author'>{author}</h6>
-                          </div>
-                        })
-                        // If only one author is found, display that author
-                      : <h6 className='book-author'> {bookDetails.authors} </h6>
-                    }
-                
-                <h6>{bookDetails.publishedDate}</h6>
-                <h6>{bookDetails.publisher}</h6>
+        {hasError 
+          ? <Alert variant='danger'>{`An Error has occured with your search results: ${errorMessage}`}</Alert>
 
-                
-                <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
-                  <Dropdown.Item href="#/action-1">Want to Read </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Currently Reading</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Read</Dropdown.Item>
-                </DropdownButton>
+          : <div className='book-details'>
+              <div className='details-top'>
+                {bookDetails.imageLinks 
+                  && <img src={bookDetails.imageLinks.thumbnail} alt={bookDetails.title}/>
+                  // :  <img src={noImage} style={{width: '128px'}} alt={bookDetails.title} /> 
+                }
+                <div className='details-top-right'>
+                  
+                    {/* This checks if there are not authors listed */}
+                      {!bookDetails.authors 
+                        ? null 
+                        // This checks if there are more than one author and this loops over the array of authors to display them correctly
+                        : bookDetails.authors.length > 1 
+                        ? bookDetails.authors.map((author, i) => {
+                          return <div key={i}> 
+                            <h6 className='book-author'>{author}</h6>
+                            </div>
+                          })
+                          // If only one author is found, display that author
+                        : <h6 className='book-author'> {bookDetails.authors} </h6>
+                      }
+                  
+                  <h6>{bookDetails.publishedDate}</h6>
+                  <h6>{bookDetails.publisher}</h6>
 
+                  
+                  <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
+                    <Dropdown.Item href="#/action-1">Want to Read </Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Currently Reading</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Read</Dropdown.Item>
+                  </DropdownButton>
+
+                  </div>
                 </div>
-              </div>
-              <div className='details-bottom'>
-                <h2 className='book-title'>{bookDetails.title}</h2>
-                <h5 className='book-subtitle'>{bookDetails.subtitle}</h5>
-                <p className='book-description'>{bookDetails.description}</p>
-                <h6 className='book-categories'>{bookDetails.categories}</h6>
-              </div>
-
+                <div className='details-bottom'>
+                  <h2 className='book-title'>{bookDetails.title}</h2>
+                  <h5 className='book-subtitle'>{bookDetails.subtitle}</h5>
+                  <p className='book-description'>{bookDetails.description}</p>
+                  <h6 className='book-categories'>{bookDetails.categories}</h6>
+                </div>
           </div>
-        </div>
+        }
 
+        </div>
       </>
   )
 }

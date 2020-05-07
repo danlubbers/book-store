@@ -24,7 +24,7 @@ export default function Bookshelf() {
     )();
   }, [uuid, setBooks]);
   
-  console.log(books)
+  // console.log(books)
 
   return (
     <>

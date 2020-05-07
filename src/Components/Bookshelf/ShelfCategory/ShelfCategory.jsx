@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { BooksContext } from '../../../context/booksContext';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 export default function ShelfCategory(props) {
 
-  console.log('props ', props.books)
+  // console.log('props ', props.books);
 
   const [, setBooks] = useContext(BooksContext)
   return (
@@ -17,9 +18,16 @@ export default function ShelfCategory(props) {
         return (
           <div className='shelf-book' key={i}>
             <img src={book.imageLinks.thumbnail} alt={book.title}/>
-            <Link to={`/cookie/book/${slug}`} onClick={() => setBooks(book)}>
-              <h5 className='book-title'>{book.title}</h5>
-            </Link>
+            <div className='shelf-info'>
+              <Link to={`/cookie/book/${slug}`} onClick={() => setBooks(book)}>
+                <h5 className='book-title'>{book.title}</h5>
+              </Link>
+              <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
+                <Dropdown.Item href="#/action-1">Want to Read </Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Currently Reading</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Read</Dropdown.Item>
+              </DropdownButton>
+            </div>
           </div>
         )
       })}
