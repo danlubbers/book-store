@@ -24,7 +24,11 @@ export default function Bookshelf() {
     )();
   }, [uuid, setBooks]);
   
-  // console.log(books)
+  
+  console.log(Array.isArray(books.read))
+  
+  console.log(books.read && books.read.filter(e => e.id === "YhdU8thA6eEC"))
+
 
   return (
     <>

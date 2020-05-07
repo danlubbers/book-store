@@ -5,7 +5,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 export default function ShelfCategory(props) {
 
-  // console.log('props ', props.books);
+  console.log('props ', props);
 
   const [, setBooks] = useContext(BooksContext)
   return (
@@ -23,7 +23,7 @@ export default function ShelfCategory(props) {
                 <h5 className='book-title'>{book.title}</h5>
               </Link>
               <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
-                <Dropdown.Item href="#/action-1">Want to Read </Dropdown.Item>
+                <Dropdown.Item onChange={() => console.log("Want to Read!")}>Want to Read </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Currently Reading</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Read</Dropdown.Item>
               </DropdownButton>

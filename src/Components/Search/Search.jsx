@@ -14,7 +14,7 @@ export default function Search() {
   const [isLoading, setIsLoading] = useState(false);
   const [books, setBooks] = useContext(BooksContext);
   const [hasError, setHasError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('No search results were found!');
+  const [errorMessage, ] = useState('No search results were found!');
 
   const searchBooks = async (e) => {
     e.preventDefault();
