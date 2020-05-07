@@ -8,7 +8,7 @@ export const ProtectedRoutes = ({
 }) => {
 
   const [uuid] = useContext(CookieContext);
-  console.log('Protected', uuid)
+  // console.log('Protected', uuid);
   return (
     <Route 
       {...rest}

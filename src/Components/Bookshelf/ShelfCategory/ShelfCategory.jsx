@@ -8,21 +8,25 @@ import axios from 'axios';
 
 export default function ShelfCategory(props) {
 
-  console.log('props ', props);
+  // console.log('props ', props);
 
   const [uuid, ] = useContext(CookieContext);
   const [, setBooks] = useContext(BooksContext);
-
+  
   const changeShelf = async (e, slug) => {
     const shelf = e.target.name;
     try {
 
       await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`);    
+      // Hacky way to refresh page, but works till I figure out a better way.
+      window.location.reload(true); 
 
     } catch(err) {
       console.log(err)
     }
   };
+
+ 
 
   return (
     

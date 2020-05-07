@@ -20,7 +20,6 @@ export default function BookDetails(props) {
       try {
         setIsLoading(true)
         const slug = props.match.params.slug;
-        // console.log(slug)
         const res = await axios.get(`http://localhost:7000/book/${slug}?id=${uuid}`);
         setBookDetails(res.data.book);
         setIsLoading(false);
@@ -39,15 +38,13 @@ export default function BookDetails(props) {
     const shelf = e.target.name;
     const slug = props.match.params.slug;
     try {
-      await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`)
+      await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`);
+      
       
     } catch(err) {
       console.log(err)
     }
   };
-
-  // console.log(Array.isArray(bookDetails))
-  // console.log(bookDetails)
 
   return (
       <>
