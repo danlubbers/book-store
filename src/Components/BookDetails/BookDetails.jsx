@@ -90,10 +90,10 @@ export default function BookDetails(props) {
 
                   
                   <DropdownButton id="dropdown-basic-button" title="Change Shelf" variant='secondary'>
-                    <Dropdown.Item name='none' onClick={changeShelf}>None </Dropdown.Item>
-                    <Dropdown.Item name='wantToRead' onClick={changeShelf}>Want to Read </Dropdown.Item>
-                    <Dropdown.Item name='currentlyReading' onClick={changeShelf}>Currently Reading</Dropdown.Item>
-                    <Dropdown.Item name='read' onClick={changeShelf}>Read</Dropdown.Item>
+                    <Dropdown.Item name='none' onClick={changeShelf}> None </Dropdown.Item>
+                    <Dropdown.Item name='wantToRead' onClick={changeShelf}> Want to Read </Dropdown.Item>
+                    <Dropdown.Item name='currentlyReading' onClick={changeShelf}> Currently Reading</Dropdown.Item>
+                    <Dropdown.Item name='read' onClick={changeShelf}> Read</Dropdown.Item>
                   </DropdownButton>
 
                   </div>
