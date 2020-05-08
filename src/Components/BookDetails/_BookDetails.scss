@@ -7,6 +7,8 @@
   justify-content: center; 
   align-items: center;
 
+ 
+
     h3 {
       text-align: center;
     }
@@ -33,11 +35,14 @@
   }
 
   .details-bottom {
+    width: 100%;
     margin-top: 35px;
     .book-title, .book-subtitle, .book-categories {
       text-align: center;
     }
+
+    @media (min-width: 968px) {
+      width: 75%;
+    } 
   }
-  
- 
 }

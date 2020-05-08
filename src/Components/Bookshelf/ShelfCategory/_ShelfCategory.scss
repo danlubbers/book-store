@@ -5,19 +5,36 @@
   border: 1px solid black;
   border-radius: 10px;
 
+  @media (min-width: 968px) {
+    width: 80%;
+  } 
+
+  @media (min-width: 1260px) {
+    width: 60%;
+  } 
+
   .category-title {
     text-align: center;
   }
 
   .shelf-book {
-    width: 100%;
-    margin: 30px 10px;
+    width: 90%;
+    margin: 30px 20px;
     display: flex;
     justify-content: flex-start;
+    
+    @media (min-width: 968px) {
+      margin: 30px 100px;
+      // width: 70%;
+    } 
+
+    @media (min-width: 1260px) {
+      // width: 50%;
+    } 
   }
 
   .shelf-info {
-    margin-left: 25px;
+    margin-left: 35px;
 
     .book-title {
       

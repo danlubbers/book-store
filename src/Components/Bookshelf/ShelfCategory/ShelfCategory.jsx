@@ -24,9 +24,7 @@ export default function ShelfCategory(props) {
     } catch(err) {
       console.log(err)
     }
-  };
-
- 
+  }; 
 
   return (
     

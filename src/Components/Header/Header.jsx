@@ -4,7 +4,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 
-export default function Header() {
+export default function Header(props) {
+  console.log(props)
   return (
     <header>
       <nav>

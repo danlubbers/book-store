@@ -51,7 +51,7 @@ function App({history}) {
     <CookieProvider>
         <BooksProvider>
           <div className="App">
-            <Header />
+            <Header destroySessionCookie={destroySessionCookie}/>
             <Login 
               onSubmit={handleSubmit}
               username={username}
