@@ -6,6 +6,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 // import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function BookDetails(props) {
 
@@ -14,6 +15,8 @@ export default function BookDetails(props) {
   const [bookDetails, setBookDetails] = useState([]);
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
@@ -39,7 +42,7 @@ export default function BookDetails(props) {
     const slug = props.match.params.slug;
     try {
       await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`);
-      
+      history.push('/cookie/bookshelf')
       
     } catch(err) {
       console.log(err)

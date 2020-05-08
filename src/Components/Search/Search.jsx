@@ -7,8 +7,8 @@ import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Search() {
 
+export default function Search() {
   const [uuid, ] = useContext(CookieContext);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +18,6 @@ export default function Search() {
 
   const searchBooks = async (e) => {
     e.preventDefault();
-
       try {
         setIsLoading(true)
         const res = await axios.get(`http://localhost:7000/book/search/${search}?id=${uuid}`);
