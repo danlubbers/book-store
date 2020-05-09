@@ -8,9 +8,11 @@ import Login from './Components/Login/Login';
 import { BooksProvider } from "./context/booksContext";
 
 function App({history}) {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn] = useState(`You are already logged in!  
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedInMessage] = useState(`You are already logged in!  
     Click on a link in the header to navigate to a page.
   `);
   const [errorMessage] = useState(`Username or Password is incorrect!`);
@@ -34,9 +36,9 @@ function App({history}) {
         }
       )
   
-      console.log('uuid ', uuid);
+      // console.log('uuid ', uuid);
       res.data.uuid && setUUID(res.data.uuid);
-      history.push('/cookie/bookshelf')
+      history.push('/cookie/bookshelf');
   
     } catch(err) {
       setHasError(true);
@@ -46,23 +48,30 @@ function App({history}) {
     }
   }
 
+  const handleLogout = () => {
+    destroySessionCookie();
+    history.push('/')
+    // update the page so the cookie actually goes away and the user no longer has access to protected routes
+    window.location.reload(true); 
+    // setLoggedIn(false);
+  }
 
   return (
     <CookieProvider>
         <BooksProvider>
           <div className="App">
-            <Header destroySessionCookie={destroySessionCookie}/>
+            <Header uuid={uuid}/>
             <Login 
               onSubmit={handleSubmit}
               username={username}
               setUsername={setUsername}
               password={password}
               setPassword={setPassword}
-              loggedIn={loggedIn}
+              loggedInMessage={loggedInMessage}
               errorMessage={errorMessage}
               hasError={hasError}
               getSessionCookie={getSessionCookie}
-              destroySessionCookie={destroySessionCookie}
+              onLogout={handleLogout}
             />
           </div>
         </BooksProvider>

@@ -2,13 +2,15 @@ import React, { useState, useContext } from 'react';
 import Header from '../Header/Header';
 import { FormGroup, FormControl, Spinner, Alert } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
+import { destroySessionCookie } from '../../utils/Cookies.util';
 import { BooksContext } from '../../context/booksContext';
 import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-export default function Search() {
+export default function Search(props) {
+
   const [uuid, ] = useContext(CookieContext);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -33,9 +35,17 @@ export default function Search() {
 
     // console.log({books})
 
+    const handleLogout = () => {
+      destroySessionCookie();
+      props.history.push('/')
+      // update the page so the cookie actually goes away and the user can not still go to protected routes
+      window.location.reload(true); 
+      // setLoggedOut(true);
+    }
+
   return (
     <>
-      <Header />
+      <Header onLogout={handleLogout}/>
 
       <div className='search-container'>
         <h1>Search</h1>

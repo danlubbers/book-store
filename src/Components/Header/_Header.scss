@@ -1,4 +1,6 @@
 nav {
+  width: 100vw;
+  height: 75px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -8,8 +10,32 @@ nav {
   border-bottom-right-radius: 20%;
   background-color: rgb(175, 175, 175);
 
-  .searchBtn {
-    border: none;
-    background-color: transparent;
+  .home-text {
+    font-size: 1.2em;
+  }
+
+  .home-text:hover {
+    color: rgb(75, 75, 75);
+  }
+
+  .bookshelf-text {
+    // This shift accounts for the centering being off from the search icon 
+    margin-left: 18px;
+
+    @media (max-width: 414px) {
+      font-size: 1.4em;
+    }
+  }
+
+  .bookshelf-text:hover {
+    @extend .home-text:hover;
+  }
+
+  .search-text {
+    font-size: 1.2em;
+  }
+
+  .search-text:hover {
+    @extend .home-text:hover;
   }
 }

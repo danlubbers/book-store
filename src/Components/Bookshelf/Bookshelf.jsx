@@ -35,7 +35,7 @@ export default function Bookshelf() {
 
       <div className='bookshelf-container'>
 
-        <h1>Book Shelf</h1>
+        {/* <h1>Book Shelf</h1> */}
 
         <ShelfCategory 
           title='Want to Read: '

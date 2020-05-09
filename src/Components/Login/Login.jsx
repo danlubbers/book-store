@@ -18,7 +18,7 @@ function Login(props) {
 
       {!!props.getSessionCookie() && 
         <h5 className='loginError'>
-          <Alert variant={'success'} size='sm'>{props.loggedIn}</Alert>
+          <Alert variant={'success'} size='sm'>{props.loggedInMessage}</Alert>
         </h5>
       }  
 
@@ -30,7 +30,7 @@ function Login(props) {
 
       <span>
         <button type='submit' className='btn btn-secondary' disabled={!!props.getSessionCookie()}>Login</button>
-        <button type='text' className='btn btn-secondary' disabled={!props.getSessionCookie()} onClick={props.destroySessionCookie}>Logout</button>
+        <button type='text' className='btn btn-secondary' disabled={!props.getSessionCookie()} onClick={props.onLogout}>Logout</button>
       </span>
      
       </form>
