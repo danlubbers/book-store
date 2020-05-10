@@ -1,5 +1,336 @@
 [
   {
+    "id": "5sKSDwAAQBAJ",
+    "userId": "0420",
+    "title": "How to Change Your Mind",
+    "subtitle": "What the New Science of Psychedelics Teaches Us about Consciousness, Dying, Addiction, Depression, and Transcendence",
+    "authors": [
+        "Michael Pollan"
+    ],
+    "publisher": "Penguin Books",
+    "publishedDate": "2019-05-14",
+    "description": "New York Times Book Review 10 Best Books of 2018 A New York Times Notable Book The #1 New York Times bestseller. A brilliant and brave investigation into the medical and scientific revolution taking place around psychedelic drugs--and the spellbinding story of his own life-changing psychedelic experiences When Michael Pollan set out to research how LSD and psilocybin (the active ingredient in magic mushrooms) are being used to provide relief to people suffering from difficult-to-treat conditions such as depression, addiction and anxiety, he did not intend to write what is undoubtedly his most personal book. But upon discovering how these remarkable substances are improving the lives not only of the mentally ill but also of healthy people coming to grips with the challenges of everyday life, he decided to explore the landscape of the mind in the first person as well as the third. Thus began a singular adventure into various altered states of consciousness, along with a dive deep into both the latest brain science and the thriving underground community of psychedelic therapists. Pollan sifts the historical record to separate the truth about these mysterious drugs from the myths that have surrounded them since the 1960s, when a handful of psychedelic evangelists inadvertently catalyzed a powerful backlash against what was then a promising field of research. A unique and elegant blend of science, memoir, travel writing, history, and medicine, How to Change Your Mind is a triumph of participatory journalism. By turns dazzling and edifying, it is the gripping account of a journey to an exciting and unexpected new frontier in our understanding of the mind, the self, and our place in the world. The true subject of Pollan's \"mental travelogue\" is not just psychedelic drugs but also the eternal puzzle of human consciousness and how, in a world that offers us both suffering and joy, we can do our best to be fully present and find meaning in our lives.",
+    "industryIdentifiers": [
+        {
+            "type": "ISBN_13",
+            "identifier": "9780735224155"
+        },
+        {
+            "type": "ISBN_10",
+            "identifier": "0735224153"
+        }
+    ],
+    "readingModes": {
+        "text": false,
+        "image": false
+    },
+    "pageCount": 480,
+    "printType": "BOOK",
+    "categories": [
+        "Body, Mind & Spirit"
+    ],
+    "averageRating": 4,
+    "ratingsCount": 12,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+        "containsEpubBubbles": false,
+        "containsImageBubbles": false
+    },
+    "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=5sKSDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=5sKSDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=5sKSDwAAQBAJ&printsec=frontcover&dq=how+to+change+your+mind&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=5sKSDwAAQBAJ&dq=how+to+change+your+mind&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/How_to_Change_Your_Mind.html?hl=&id=5sKSDwAAQBAJ",
+    "shelf": "read"
+},
+{
+  "id": "-YZqPmK8jAUC",
+  "userId": "0420",
+  "title": "Holographic Universe",
+  "authors": [
+      "Michael Talbot"
+  ],
+  "publisher": "Harper Collins",
+  "publishedDate": "1992-05-06",
+  "description": "Examines a new theory of reality, based on holography, that explains the paranormal abilities of the mind, the latest frontiers of physics, and the unsolved riddles of the brain and body",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_13",
+          "identifier": "9780060922580"
+      },
+      {
+          "type": "ISBN_10",
+          "identifier": "0060922583"
+      }
+  ],
+  "readingModes": {
+      "text": false,
+      "image": false
+  },
+  "pageCount": 338,
+  "printType": "BOOK",
+  "categories": [
+      "Body, Mind & Spirit"
+  ],
+  "averageRating": 4,
+  "ratingsCount": 14,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=-YZqPmK8jAUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=-YZqPmK8jAUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=-YZqPmK8jAUC&printsec=frontcover&dq=holographic-universe&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.com/books?id=-YZqPmK8jAUC&dq=holographic-universe&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Holographic_Universe.html?hl=&id=-YZqPmK8jAUC",
+  "shelf": "currentlyReading"
+},
+{
+  "id": "OX8WGRZQIT4C",
+  "userId": "0420",
+  "title": "Beyond the Brain",
+  "subtitle": "Birth, Death, and Transcendence in Psychotherapy",
+  "authors": [
+      "Stanislav Grof"
+  ],
+  "publisher": "SUNY Press",
+  "publishedDate": "1985-01-01",
+  "description": "Beyond the Brain seriously challenges the existing neurophysiological models of the brain. After three decades of extensive research on those non-ordinary states of consciousness induced by psychedelic drugs and by other means, Grof concludes that our present scientific world view is as inadequate as many of its historical predecessors. In this pioneering work, he proposes a new model of the human psyche that takes account of his findings. Grof includes in his model the recollective level, or the reliving of emotionally relevant memories, a level at which the Freudian framework can be useful. Beyond that is perinatal level in which the human unconscious may be activated to a reliving of biological birth and confrontation with death. How birth experience influences an individual's later development is a central focus of the book. The most serious challenge to contemporary psycho-analytic theory comes from a delineation of the transpersonal level, or the expansion of consciousness beyond the boundaries of time and space. Grof makes a bold argument that understanding of the perinatal and transpersonal levels changes much of how we view both mental illness and mental health. His reinterpretation of some of the most agonizing aspects of human behavior proves thought provoking for both laypersons and professional therapists.",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_10",
+          "identifier": "0873959531"
+      },
+      {
+          "type": "ISBN_13",
+          "identifier": "9780873959537"
+      }
+  ],
+  "readingModes": {
+      "text": true,
+      "image": true
+  },
+  "pageCount": 466,
+  "printType": "BOOK",
+  "categories": [
+      "Psychology"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "0.0.3.0.preview.3",
+  "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+  },
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=OX8WGRZQIT4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=OX8WGRZQIT4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=OX8WGRZQIT4C&printsec=frontcover&dq=stanislov-grof&hl=&cd=1&source=gbs_api",
+  "infoLink": "http://books.google.com/books?id=OX8WGRZQIT4C&dq=stanislov-grof&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Beyond_the_Brain.html?hl=&id=OX8WGRZQIT4C",
+  "shelf": "wantToRead"
+},
+{
+  "id": "CheJHAAACAAJ",
+  "userId": "0420",
+  "title": "Transfigurations",
+  "authors": [
+      "Alex Grey"
+  ],
+  "publisher": "Inner Traditions",
+  "publishedDate": "2004-11-09",
+  "description": "The most extensive collection of Grey’s visionary artwork and life’s journey in one volume • Includes a foreword by Albert Hofmann and essays on Grey’s work by renowned art critic Donald Kuspit, philosopher Ken Wilber, and Stephen Larsen, author of Joseph Campbell: A Fire in the Mind • 21,000 sold in hardcover since October 2001 Every once in a great while an artist emerges who does more than simply reflect the social trends of the time. Such an artist is able to transcend established thinking and help us redefine ourselves and our world. Today, a growing number of art critics, philosophers, and spiritual seekers believe that they have found that vision in the art of Alex Grey. Transfigurations, the follow-up to Grey’s Sacred Mirrors (1991)--one of the most successful art books of the 1990s--includes all of Grey’s major works completed in the following decade, including the masterful seven-paneled altarpiece Nature of Mind, called “the grand climax of Grey’s art” by Donald Kuspit. His portrayals of human beings blend anatomical exactitude with visionary depictions of universal life energy. Alex Grey’s striking artwork leads us on the soul’s journey from material world encasement to recovery of the divinely illuminated core.",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_10",
+          "identifier": "1594770174"
+      },
+      {
+          "type": "ISBN_13",
+          "identifier": "9781594770173"
+      }
+  ],
+  "readingModes": {
+      "text": false,
+      "image": false
+  },
+  "pageCount": 176,
+  "printType": "BOOK",
+  "categories": [
+      "Art"
+  ],
+  "averageRating": 5,
+  "ratingsCount": 3,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+  },
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=CheJHAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=CheJHAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=CheJHAAACAAJ&dq=alex-grey&hl=&cd=3&source=gbs_api",
+  "infoLink": "http://books.google.com/books?id=CheJHAAACAAJ&dq=alex-grey&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Transfigurations.html?hl=&id=CheJHAAACAAJ",
+  "shelf": "read"
+},
+{
+  "id": "iI2rtgAACAAJ",
+  "userId": "0420",
+  "title": "Net of Being",
+  "authors": [
+      "Alex Grey"
+  ],
+  "publisher": "Inner Traditions",
+  "publishedDate": "2012-11-20",
+  "description": "How Alex Grey’s visionary art is evolving the cultural body through icons of interconnectedness • Includes over 200 reproductions of Grey’s artwork • Contains spectacular photos of Grey’s collaboration with the cult band TOOL plus his worldwide live-painting performances • Offers Grey’s reflections on how art evolves consciousness with a new symbology of the Networked Self • Winner of the 2013 Nautilus Silver Book Award in Photography and Art Revealing the interwoven energies of body and soul, love and spirit that illuminate the core of each being, Alex Grey’s mystic paintings articulate the realms of consciousness encountered during visits to entheogenic heaven worlds. His painting Net of Being--inspired by a blazing vision of an infinite grid of Godheads during an ayahuasca journey--has reached millions as the cover and interior of the band TOOL’s Grammy award–winning triple-platinum album, 10,000 Days. Net of Being is one of many images Grey has created that have resulted in a chain reaction of uses--from apparel and jewelry to tattoos and music videos--embedding these iconic works into our culture’s living Net of Being. The book explores how the mystical experience expressed in Alex Grey’s work opens a new understanding of our shared consciousness and unveils the deep influence art can have on cultural evolution. The narrative progresses through a successive expansion of identity--from the self, to self and beloved, to self and community, world spirit, and cosmic consciousness, where bodies are transparent to galactic energies. Presenting over 200 images, including many never-before-reproduced paintings as well as masterworks such as St. Albert and the LSD Revelation Revolution and Godself, the book also documents performance art, live-painting on stage throughout the world, and the “social sculpture” called CoSM, Chapel of Sacred Mirrors, that Grey cofounded with his wife and creative collaborator, artist Allyson Grey.",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_10",
+          "identifier": "159477384X"
+      },
+      {
+          "type": "ISBN_13",
+          "identifier": "9781594773846"
+      }
+  ],
+  "readingModes": {
+      "text": false,
+      "image": false
+  },
+  "pageCount": 208,
+  "printType": "BOOK",
+  "categories": [
+      "Art"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": false,
+  "contentVersion": "preview-1.0.0",
+  "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+  },
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=iI2rtgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=iI2rtgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=iI2rtgAACAAJ&dq=alex-grey&hl=&cd=4&source=gbs_api",
+  "infoLink": "http://books.google.com/books?id=iI2rtgAACAAJ&dq=alex-grey&hl=&source=gbs_api",
+  "canonicalVolumeLink": "https://books.google.com/books/about/Net_of_Being.html?hl=&id=iI2rtgAACAAJ",
+  "shelf": "currentlyReading"
+},
+{
+  "id": "PhllUXhv7vMC",
+  "userId": "0420",
+  "title": "The Holotropic Mind",
+  "subtitle": "The Three Levels of Human Consciousness and How They Shape Our Lives",
+  "authors": [
+      "Stanislav Grof",
+      "Hal Zina Bennett"
+  ],
+  "publisher": "Harper Collins",
+  "publishedDate": "2009-10-13",
+  "description": "A TURNING POINT IN PSYCHOLOGY AND HUMAN HISTORY Stanislav Grof, M.D., formerly a professor at Johns Hopkins University School of Medicine and founder of the International Transpersonal Association, has written many books, including 'Realms of the",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_13",
+          "identifier": "9780061746871"
+      },
+      {
+          "type": "ISBN_10",
+          "identifier": "0061746878"
+      }
+  ],
+  "readingModes": {
+      "text": true,
+      "image": false
+  },
+  "pageCount": 256,
+  "printType": "BOOK",
+  "categories": [
+      "Psychology"
+  ],
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.5.4.0.preview.2",
+  "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+  },
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=PhllUXhv7vMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=PhllUXhv7vMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=PhllUXhv7vMC&printsec=frontcover&dq=holotropic-mind&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=PhllUXhv7vMC&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=PhllUXhv7vMC",
+  "shelf": "read"
+},
+{
+  "id": "FmAoDwAAQBAJ",
+  "userId": "0420",
+  "title": "Sacred Mirrors",
+  "subtitle": "The Visionary Art of Alex Grey",
+  "authors": [
+      "Alex Grey"
+  ],
+  "publisher": "Simon and Schuster",
+  "publishedDate": "1990-09-01",
+  "description": "This unique series of paintings takes the viewer on a graphic, visionary journey through the physical, metaphysical, and spiritual anatomy of the self. From anatomically correct rendering of the body systems, Grey moves to the spiritual/energetic systems with such images as \"Universal Mind Lattice,\" envisioning the sacred and esoteric symbolism of the body and the forces that define its living field of energy. Includes essays on the significance of Grey's work by Ken Wilber, the eminent transpersonal psychologist, and by the noted New York art critic, Carlo McCormick.",
+  "industryIdentifiers": [
+      {
+          "type": "ISBN_13",
+          "identifier": "9781620552698"
+      },
+      {
+          "type": "ISBN_10",
+          "identifier": "1620552698"
+      }
+  ],
+  "readingModes": {
+      "text": true,
+      "image": false
+  },
+  "pageCount": 96,
+  "printType": "BOOK",
+  "categories": [
+      "Design"
+  ],
+  "averageRating": 4,
+  "ratingsCount": 3,
+  "maturityRating": "NOT_MATURE",
+  "allowAnonLogging": true,
+  "contentVersion": "1.1.1.0.preview.2",
+  "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+  },
+  "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=FmAoDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=FmAoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  },
+  "language": "en",
+  "previewLink": "http://books.google.com/books?id=FmAoDwAAQBAJ&printsec=frontcover&dq=alex-grey&hl=&cd=1&source=gbs_api",
+  "infoLink": "https://play.google.com/store/books/details?id=FmAoDwAAQBAJ&source=gbs_api",
+  "canonicalVolumeLink": "https://play.google.com/store/books/details?id=FmAoDwAAQBAJ",
+  "shelf": "wantToRead"
+},
+  {
     "id": "qKydDAAAQBAJ",
     "userId": "2725",
     "title": "Add a Pinch",
