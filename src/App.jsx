@@ -11,7 +11,6 @@ function App({history}) {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [loggedIn, setLoggedIn] = useState(false);
   const [loggedInMessage] = useState(`You are already logged in!  
     Click on a link in the header to navigate to a page.
   `);
@@ -35,8 +34,7 @@ function App({history}) {
           }
         }
       )
-  
-      // console.log('uuid ', uuid);
+
       res.data.uuid && setUUID(res.data.uuid);
       history.push('/cookie/bookshelf');
   
@@ -52,7 +50,6 @@ function App({history}) {
     destroySessionCookie();
     // update the page so the cookie actually goes away and the user no longer has access to protected routes
     window.location.reload(true); 
-    // setLoggedIn(false);
   }
 
   return (

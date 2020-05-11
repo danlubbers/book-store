@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { BooksContext } from '../../../context/booksContext';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
-
 export default function ShelfCategory(props) {
 
   const [, setBooks] = useContext(BooksContext);
