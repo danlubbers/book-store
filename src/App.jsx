@@ -50,7 +50,6 @@ function App({history}) {
 
   const handleLogout = () => {
     destroySessionCookie();
-    history.push('/')
     // update the page so the cookie actually goes away and the user no longer has access to protected routes
     window.location.reload(true); 
     // setLoggedIn(false);

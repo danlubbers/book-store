@@ -15,45 +15,52 @@ export default function Bookshelf() {
       try {
         const res = await axios.get(`http://localhost:7000/bookshelf/?id=${uuid}`);
         setBooks(res.data.books)
-        
-        
+         
       } catch(err) {
         console.error(err);
       }
     }
     )();
   }, [uuid, setBooks]);
-  
-  
-  // console.log(Array.isArray(books.read))
-  // console.log(books.read && books.read.filter(e => e.id === "YhdU8thA6eEC"))
 
+  const changeShelf = async (e, slug) => {
 
+    const shelf = e.target.name;
+
+    try {
+
+      let res = await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`);    
+      setBooks(res.data.books)
+
+    } catch(err) {
+      console.log(err)
+    }
+  }; 
+  
   return (
     <>
       <Header />
 
       <div className='bookshelf-container'>
 
-        {/* <h1>Book Shelf</h1> */}
-
         <ShelfCategory 
           title='Want to Read: '
           books={books['wantToRead']}
+          changeShelf={changeShelf}
           />
 
         <ShelfCategory 
           title='Currently Reading: '
           books={books['currentlyReading']}
+          changeShelf={changeShelf}
           />
 
         <ShelfCategory 
           title='Read: '
           books={books['read']}
+          changeShelf={changeShelf}
           />
-       
-       
-
+           
       </div>
     </>
   )
