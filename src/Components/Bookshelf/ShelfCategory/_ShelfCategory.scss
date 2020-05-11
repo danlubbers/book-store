@@ -19,9 +19,13 @@
 
   .shelf-book {
     width: 90%;
-    margin: 30px 20px;
+    margin: 30px 0;
     display: flex;
     justify-content: flex-start;
+    
+    @media (min-width: 321px) {
+      margin: 30px 20px;
+    }
     
     @media (min-width: 968px) {
       margin: 30px 100px;
@@ -34,7 +38,11 @@
   }
 
   .shelf-info {
-    margin-left: 35px;
+    margin-left: 5px;
+    
+    @media (min-width: 321px) {
+      margin-left: 35px;
+    } 
 
     .book-title {
       
