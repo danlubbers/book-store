@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { BooksContext } from '../../../context/booksContext';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import Proptypes from 'prop-types';
 
 export default function ShelfCategory(props) {
 
@@ -35,4 +36,11 @@ export default function ShelfCategory(props) {
     </div>
       
   )
+}
+
+ShelfCategory.propTypes = {
+  title: Proptypes.string.isRequired,
+  books: Proptypes.array,
+  changeShelf: Proptypes.func.isRequired,
+
 }

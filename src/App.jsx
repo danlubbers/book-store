@@ -17,7 +17,7 @@ function App({history}) {
   const [errorMessage] = useState(`Username or Password is incorrect!`);
   const [hasError, setHasError] = useState(false);
 
-  const [uuid, setUUID] = useContext(CookieContext);
+  const [, setUUID] = useContext(CookieContext);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -56,7 +56,7 @@ function App({history}) {
     <CookieProvider>
         <BooksProvider>
           <div className="App">
-            <Header uuid={uuid}/>
+            <Header />
             <Login 
               onSubmit={handleSubmit}
               username={username}

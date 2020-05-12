@@ -1,5 +1,6 @@
 import React from 'react';
 import {FormGroup, FormControl, FormLabel, Alert} from 'react-bootstrap';
+import Proptypes from 'prop-types';
 
 function Login(props) {
 
@@ -38,3 +39,16 @@ function Login(props) {
 }
 
 export default Login;
+
+Login.propTypes = {
+  onSubmit: Proptypes.func.isRequired, 
+  username: Proptypes.string.isRequired, 
+  setUsername: Proptypes.func.isRequired, 
+  password: Proptypes.string.isRequired, 
+  setPassword: Proptypes.func.isRequired, 
+  loggedInMessage: Proptypes.string, 
+  errorMessage: Proptypes.string, 
+  hasError: Proptypes.bool,
+  getSessionCookie: Proptypes.func.isRequired, 
+  onLogout: Proptypes.func.isRequired, 
+}
