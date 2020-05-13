@@ -23,9 +23,13 @@
     }
   }
 
-  .loginError {
+  .login-success {
+    text-align: center;
     margin: 10px 0;
     font-size: 1em;
+  }
+  .login-error {
+    @extend .login-success
   }
 
   span {

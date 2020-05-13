@@ -19,14 +19,14 @@ function Login(props) {
 
       {/* if sessionCookie exists notify user they are logged in */}
       {!!props.getSessionCookie() && 
-        <h5 className='loginError'>
+        <h5 className='login-success'>
           <Alert variant={'success'} size='sm'>{props.loggedInMessage}</Alert>
         </h5>
       }  
 
       {/* if login credentials are not valid notify user with error message */}
       {props.hasError && 
-        <h5 className='loginError'>
+        <h5 className='login-error'>
           <Alert variant={'danger'} size='sm'>{props.errorMessage}</Alert>
         </h5>
       }
