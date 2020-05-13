@@ -29,21 +29,16 @@
     
     @media (min-width: 968px) {
       margin: 30px 100px;
-      // width: 70%;
-    } 
-
-    @media (min-width: 1260px) {
-      // width: 50%;
     } 
   }
-
+  
   .shelf-info {
-    margin-left: 5px;
+    margin-left: 10px;
     
-    @media (min-width: 321px) {
+    @media (min-width: 400px) {
       margin-left: 35px;
     } 
-
+  
     .book-title {
       
     }
