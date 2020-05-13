@@ -5,7 +5,7 @@ import Proptypes from 'prop-types';
 function Login(props) {
 
   return (
-      <form onSubmit={props.onSubmit}>
+      <form onSubmit={props.onSubmit} className='login-form'>
 
         <FormGroup className="mb-3 formGroup" controlId='formBasicEmail' >
           <FormLabel className='formLabel'>Username</FormLabel>

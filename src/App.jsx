@@ -4,6 +4,7 @@ import axios from 'axios';
 import { CookieProvider, CookieContext } from "./context/cookieContext";
 import { getSessionCookie, destroySessionCookie } from './utils/Cookies.util'; 
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import { BooksProvider } from "./context/booksContext";
 
@@ -73,6 +74,7 @@ function App({history}) {
               getSessionCookie={getSessionCookie}
               onLogout={handleLogout}
             />
+            <Footer />
           </div>
         </BooksProvider>
     </CookieProvider>

@@ -1,9 +1,10 @@
-form {
-  height: 50%;
+.login-form {
+  margin-top: 75px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex: 1 0 auto;
 
 
   .formGroup {

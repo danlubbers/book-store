@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import { FormGroup, FormControl, Spinner, Alert } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 import { destroySessionCookie } from '../../utils/Cookies.util';
@@ -41,12 +42,12 @@ export default function Search(props) {
     }
 
   return (
-    <>
+    <body>
       <Header onLogout={handleLogout}/>
 
       <div className='search-container'>
         <h1>Search</h1>
-        <form onSubmit={searchBooks}> 
+        <form onSubmit={searchBooks} className='search-form'> 
           <FormGroup className="mb-3 searchGroup">
             <FormControl className='inputSearch' type="text" placeholder='Search' aria-label="Search" name='search' value={search} onChange={e => setSearch(e.target.value)}/>       
             <button type='submit' className='btn btn-secondary searchBtn'>Search</button>            
@@ -103,6 +104,9 @@ export default function Search(props) {
       
       </div>
 
-    </>
+      <Footer />
+
+
+    </body>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import { CookieContext } from '../../context/cookieContext';
 import { BooksContext } from '../../context/booksContext';
 import axios from 'axios';
@@ -50,7 +51,7 @@ export default function Bookshelf() {
   }; 
   
   return (
-    <>
+    <body>
       <Header />
 
       <div className='bookshelf-container'>
@@ -74,7 +75,9 @@ export default function Bookshelf() {
           />
            
       </div>
-    </>
+
+      <Footer />
+    </body>
   )
 }
 

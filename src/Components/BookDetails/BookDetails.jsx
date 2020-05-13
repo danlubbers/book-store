@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect} from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import { Spinner } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
@@ -51,7 +52,7 @@ export default function BookDetails(props) {
   };
 
   return (
-      <>
+      <body>
         <Header />
         <div className='book-details-container'>
         
@@ -109,6 +110,8 @@ export default function BookDetails(props) {
         }
 
         </div>
-      </>
+
+        <Footer />
+      </body>
   )
 }

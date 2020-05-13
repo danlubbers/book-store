@@ -7,6 +7,7 @@ $font-family: 'Montserrat', sans-serif;
 // Component Imports
 @import './Components/Login/Login';
 @import './Components/Header/Header';
+@import './Components/Footer/Footer';
 @import './Components/Search/Search';
 @import './Components/Bookshelf/Bookshelf';
 @import './Components/BookDetails/BookDetails';
@@ -17,6 +18,8 @@ $font-family: 'Montserrat', sans-serif;
 .App {
   height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
