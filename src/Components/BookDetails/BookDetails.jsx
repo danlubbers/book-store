@@ -42,6 +42,7 @@ export default function BookDetails(props) {
     const slug = props.match.params.slug;
     try {
       await axios.put(`http://localhost:7000/bookshelf/${slug}/${shelf}?id=${uuid}`);
+      // Using routers history to go to the bookshelf page after user selects which shelf they would like to put the book in
       history.push('/cookie/bookshelf')
       
     } catch(err) {
@@ -71,7 +72,7 @@ export default function BookDetails(props) {
                 }
                 <div className='details-top-right'>
                   
-                    {/* This checks if there are not authors listed */}
+                    {/* This checks if there are no authors listed */}
                       {!bookDetails.authors 
                         ? null 
                         // This checks if there are more than one author and this loops over the array of authors to display them correctly

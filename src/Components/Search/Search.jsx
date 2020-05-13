@@ -33,14 +33,11 @@ export default function Search(props) {
       }
     }
 
-    // console.log({books})
-
     const handleLogout = () => {
       destroySessionCookie();
       props.history.push('/')
       // update the page so the cookie actually goes away and the user can not still go to protected routes
       window.location.reload(true); 
-      // setLoggedOut(true);
     }
 
   return (
@@ -56,15 +53,17 @@ export default function Search(props) {
           </FormGroup>
         </form>
 
+        {/* if isLoading is true and hasError is false dispplay loading text */}
         {isLoading && !hasError && 
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
           </Spinner> 
         }
 
+        {/* If there are no books (falsy) or hasError is true, display error message */}
         {!books || hasError
           ? <Alert variant='danger'>{errorMessage}</Alert>
-          // Fixed issue where books.map was undefined due to data not being retrieved 
+          // checks if the length of books is greater and if true runs the map function, otherwise without the length check we get 'undefined'
           : books.length > 1 && books.map((book, i) => {
               const slug = book.id;
               return <div key={i} className='book-container'>

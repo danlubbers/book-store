@@ -1,7 +1,7 @@
 import React from "react";
 import Header from '../Header/Header';
 
-function PageNotFound() {
+export default function PageNotFound() {
 
   return (
     <>
@@ -13,5 +13,3 @@ function PageNotFound() {
     </>
   )
 }
-
-export default PageNotFound;

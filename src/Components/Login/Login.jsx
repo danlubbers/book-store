@@ -17,12 +17,14 @@ function Login(props) {
           <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={props.password} onChange={e => props.setPassword(e.target.value)} disabled={!!props.getSessionCookie()}/> 
         </FormGroup>
 
+      {/* if sessionCookie exists notify user they are logged in */}
       {!!props.getSessionCookie() && 
         <h5 className='loginError'>
           <Alert variant={'success'} size='sm'>{props.loggedInMessage}</Alert>
         </h5>
       }  
 
+      {/* if login credentials are not valid notify user with error message */}
       {props.hasError && 
         <h5 className='loginError'>
           <Alert variant={'danger'} size='sm'>{props.errorMessage}</Alert>
