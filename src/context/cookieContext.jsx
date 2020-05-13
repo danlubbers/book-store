@@ -7,7 +7,9 @@ export const CookieContext = createContext();
 export const CookieProvider = ({ children }) => {
   const [uuid, setUUID] = useState(getSessionCookie());
 
+
   const setSessionUUID = newUUID => {
+    console.log('newUUID ', newUUID)
     setSessionCookie(newUUID);
     setUUID(newUUID)
   }

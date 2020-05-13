@@ -19,6 +19,10 @@ function App({history}) {
 
   const [, setUUID] = useContext(CookieContext);
 
+  /**
+ * @param {object} e - the event
+ */
+
   const handleSubmit = async e => {
     e.preventDefault();
   
