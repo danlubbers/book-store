@@ -42,7 +42,7 @@ export default function Search(props) {
     }
 
   return (
-    <body>
+    <div className='search-wrapper'>
       <Header onLogout={handleLogout}/>
 
       <div className='search-container'>
@@ -107,6 +107,6 @@ export default function Search(props) {
       <Footer />
 
 
-    </body>
+    </div>
   )
 }

@@ -51,7 +51,7 @@ export default function Bookshelf() {
   }; 
   
   return (
-    <body>
+    <div className='bookshelf-wrapper'>
       <Header />
 
       <div className='bookshelf-container'>
@@ -77,7 +77,7 @@ export default function Bookshelf() {
       </div>
 
       <Footer />
-    </body>
+    </div>
   )
 }
 

@@ -52,7 +52,7 @@ export default function BookDetails(props) {
   };
 
   return (
-      <body>
+      <div className='book-details-wrapper'>
         <Header />
         <div className='book-details-container'>
         
@@ -112,6 +112,6 @@ export default function BookDetails(props) {
         </div>
 
         <Footer />
-      </body>
+      </div>
   )
 }
