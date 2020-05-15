@@ -58,19 +58,19 @@ export default function Bookshelf() {
 
         <ShelfCategory 
           title='Want to Read: '
-          books={books['wantToRead']}
+          books={books && books['wantToRead']}
           changeShelf={changeShelf}
           />
 
         <ShelfCategory 
           title='Currently Reading: '
-          books={books['currentlyReading']}
+          books={books && books['currentlyReading']}
           changeShelf={changeShelf}
           />
 
         <ShelfCategory 
           title='Read: '
-          books={books['read']}
+          books={books && books['read']}
           changeShelf={changeShelf}
           />
            
