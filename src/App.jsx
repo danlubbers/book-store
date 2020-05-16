@@ -71,7 +71,7 @@ function App({history}) {
               loggedInMessage={loggedInMessage}
               errorMessage={errorMessage}
               hasError={hasError}
-              getSessionCookie={getSessionCookie}
+              getSessionCookie={!!getSessionCookie()} // Passing boolean value as truthy
               onLogout={handleLogout}
             />
             <Footer />
