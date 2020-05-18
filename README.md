@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="" alt="book store">
+</p>
 
-## Available Scripts
+## Description
+Create a book store web application similar to Barnes & Nobles or Amazon. Users who visit the book store will have to sign in and once credentials are validated they can then go to their book shelf, search for new books in the database or see detailed information of a specific book on a separate page. They can save or move any book to one of three shelves: "Want to Read", "Currently Reading", or "Read."
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+1. Clone this repo: `https://github.com/danlubbers/book-store`
+2. CD into `book-store/server`
+3. `npm install` dependencies of the backend. ( Running on localhost:7000)
+4. `npm start` the backend server.
+5. Open a new terminal and CD into the book-store.
+6. `npm install` dependencies for the front-end.
+7. `npm start` the frontend server.
+8. Everything should now be up and running.
+9. There are three different login credentials you can use:
+    > Username: alex \
+    > Password: grey
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    > Username: harry \
+    > Password: potter
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    > Username: hermione \
+    > Password: granger
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## UI Requirements
+---
+1. Signin:
+    * [x] Users should be able to signin with a username and password.
+    * [x] If a user enters the wrong credentials, display a message telling the user that their credentials are not correct.
+    * [x] When a user successfully signs in, they should be redirected to their bookshelf.
+    * [x] The user must be logged in to view the Search, Book Details or Bookshelf screens. If they are not, redirect them to the Signin screen. (Hint: use protected routes.)
 
-### `npm run build`
+2. Search:
+    * [x] Users should be able to search for different book titles. An onChange event should trigger the search.
+    * [x] At least the book title, author(s) and a thumbnail of the book cover should appear in the search results. The API does not include the same information every time, so use conditional rendering; check to see if the data is there before displaying it on the screen.
+    * [x] If there are no matching titles, display a message on the screen telling the user that no search results are found.
+    * [x] Each book should link to the Book Details screen.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Book Details:
+    * [x] Users will be able to view more detailed information on a single book.
+    * [x] You will be getting the book information from an API. In addition to the book title, author(s) and cover image, include at least three other types of information about the book. Again, the API does not include the same information every time, so use conditional rendering; check to see if the data is there before displaying it on the screen.
+    * [x] Users should be able to change which "shelf" a book belongs to.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+4. Bookshelf:
+    * [x] This page should contain three book lists or “shelves”:
+        1. Want to Read
+        2. Currently Reading
+        3. Read
+    * [x] Users should be able to see which shelf each book belongs to.
+    * [x] Users should be able to move a book from one shelf to another.
+    * [x] Users should be able to remove a book from their bookshelf.
+    * [x] Each book should link to the Book Details screen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Bonus Requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Coding Requirements
+---
+  * [x] This application should contain at least four React components. Each of the four screens outlined earlier should be a separate, high-level React Component. (You can choose to use hooks, extend the React Component class, or mix and match. It is up to you.)
+  * [x] You must use the React Router library.
+  * [x] You must have a signin form and authenticate users with either JWT style or session UUID style authentication tokens.
+  * [x] You must store your authentication tokens as either a secure cookies or inside local storage.
+  * [x] You must have protected routes (routes that the user must be logged in to see).
+  * [x] If the user has logged in, and refreshes the page, they should still be logged in. If the user has not logged in yet and refreshes the page, they should not be able to access any protected content.
+  * [x] You must use the Context API (recommended) or Redux to store state that is shared universally between most components.
+  * [x] For components that are functions, you should handle AJAX calls inside the useEffect() hooks. For components where you extend the React Component class, you should make AJAX requests inside of componentDidMount() and other lifecycle hooks.
+  * [x] AJAX errors should be caught.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **Dan Lubbers**   [danlubbers.com](https://danlubbers.com)
