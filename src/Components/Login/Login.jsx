@@ -5,16 +5,16 @@ import Proptypes from 'prop-types';
 function Login(props) {
 
   return (
-      <form onSubmit={props.onSubmit} className='login-form'>
+      <form onSubmit={props.onSubmit} data-testid='login-form' className='login-form'>
 
         <FormGroup className="mb-3 formGroup" controlId='formBasicEmail' >
           <FormLabel className='formLabel'>Username</FormLabel>
-          <FormControl className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={props.username} onChange={e => props.setUsername(e.target.value)} disabled={props.getSessionCookie}/> 
+          <FormControl data-testid='Username' className='inputText' type="text" placeholder='Username' aria-label="Username" name='username' value={props.username} onChange={e => props.setUsername(e.target.value)} disabled={props.getSessionCookie}/> 
         </FormGroup>
 
         <FormGroup className="mb-3 formGroup">
           <FormLabel className='formLabel'>Password</FormLabel>
-          <FormControl className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={props.password} onChange={e => props.setPassword(e.target.value)} disabled={props.getSessionCookie}/> 
+          <FormControl data-testid='Password' className='inputText' type="password" placeholder='Password' aria-label="Password" name='password' value={props.password} onChange={e => props.setPassword(e.target.value)} disabled={props.getSessionCookie}/> 
         </FormGroup>
 
       {/* if sessionCookie exists notify user they are logged in */}
