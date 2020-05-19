@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="" alt="book store">
+  <img src="https://github.com/danlubbers/book-store/tree/master/src/assets/bookstore-media-screens.jpg" alt="book store">
 </p>
 
 ## Description
 Create a book store web application similar to Barnes & Nobles or Amazon. Users who visit the book store will have to sign in and once credentials are validated they can then go to their book shelf, search for new books in the database or see detailed information of a specific book on a separate page. They can save or move any book to one of three shelves: "Want to Read", "Currently Reading", or "Read."
 
 ## Setup
-
+---
 1. Clone this repo: `https://github.com/danlubbers/book-store`
 2. CD into `book-store/server`
-3. `npm install` dependencies of the backend. ( Running on localhost:7000)
+3. `npm install` dependencies for the backend. ( Running on localhost:7000 )
 4. `npm start` the backend server.
 5. Open a new terminal and CD into the book-store.
 6. `npm install` dependencies for the front-end.
@@ -59,7 +59,7 @@ Create a book store web application similar to Barnes & Nobles or Amazon. Users 
 
 
 ## Bonus Requirements
-
+  * [x] App is fully responsive for mobile, tablet, laptop and desktop screens
 
 ## Coding Requirements
 ---
