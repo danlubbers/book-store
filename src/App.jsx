@@ -6,7 +6,6 @@ import { getSessionCookie, destroySessionCookie } from './utils/Cookies.util';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
-import { BooksProvider } from "./context/booksContext";
 
 function App({history}) {
   
@@ -59,24 +58,22 @@ function App({history}) {
 
   return (
     <CookieProvider>
-        <BooksProvider>
-          <div className="App">
-            <Header />
-            <Login 
-              onSubmit={handleSubmit}
-              username={username}
-              setUsername={setUsername}
-              password={password}
-              setPassword={setPassword}
-              loggedInMessage={loggedInMessage}
-              errorMessage={errorMessage}
-              hasError={hasError}
-              getSessionCookie={!!getSessionCookie()} // Passing boolean value as truthy
-              onLogout={handleLogout}
-            />
-            <Footer />
-          </div>
-        </BooksProvider>
+      <div className="App">
+        <Header />
+          <Login 
+            onSubmit={handleSubmit}
+            username={username}
+            setUsername={setUsername}
+            password={password}
+            setPassword={setPassword}
+            loggedInMessage={loggedInMessage}
+            errorMessage={errorMessage}
+            hasError={hasError}
+            getSessionCookie={!!getSessionCookie()} // Passing boolean value as truthy
+            onLogout={handleLogout}
+          />
+        <Footer />
+      </div>
     </CookieProvider>
   );
 }
