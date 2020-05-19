@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/danlubbers/book-store/tree/master/src/assets/bookstore-media-screens.jpg" alt="book store">
+  <img src="https://github.com/danlubbers/book-store/blob/master/src/assets/bookstore-media-screens.jpg" alt="book store">
 </p>
 
 ## Description
