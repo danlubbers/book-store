@@ -20,6 +20,7 @@ it('renders without crashing', () => {
   )
 })
 
+// Query by Text content
 test('Finds all text ( Home, BookShelf, Search, Login, Logout )on the page', () => {
   const { getByText } = render(
     <Router history={history}>
@@ -35,6 +36,20 @@ test('Finds all text ( Home, BookShelf, Search, Login, Logout )on the page', () 
               'Logout'
               )).toBeInTheDocument();
 });
+
+// "Best Method" Query by ARIA role and label 
+test('Finds both buttons "Login" & "Logout" on the page', () => {
+  const { getByRole } = render(
+    <Router history={history}>
+      <CookieProvider>
+        <App />
+      </CookieProvider>
+    </Router>);
+  expect(getByRole('button', { name: /login/i}));
+  expect(getByRole('button', { name: /logout/i}));
+});
+
+
 
 // it('submits username and password',  () => {
 //   const username = 'alex';
