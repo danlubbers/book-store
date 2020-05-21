@@ -6,6 +6,8 @@ import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history'; 
 import { act } from 'react-dom/test-utils';
 
+import { render } from '@testing-library/react';
+
 const history = createBrowserHistory();
 
 it('renders without crashing', () => {
@@ -17,6 +19,22 @@ it('renders without crashing', () => {
     </Router>
   )
 })
+
+test('Finds all text ( Home, BookShelf, Search, Login, Logout )on the page', () => {
+  const { getByText } = render(
+    <Router history={history}>
+      <CookieProvider>
+        <App />
+      </CookieProvider>
+    </Router>);
+  expect(getByText(
+              'Home', 
+              'BookShelf', 
+              'Search', 
+              'Login', 
+              'Logout'
+              )).toBeInTheDocument();
+});
 
 // it('submits username and password',  () => {
 //   const username = 'alex';
