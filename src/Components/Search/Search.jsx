@@ -3,7 +3,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { FormGroup, FormControl, Spinner, Alert } from 'react-bootstrap';
 import { CookieContext } from '../../context/cookieContext';
-import { destroySessionCookie } from '../../utils/Cookies.util';
 import { BooksContext } from '../../context/booksContext';
 import noImage from '../../assets/no-image-found.svg';
 import axios from 'axios';
@@ -34,16 +33,9 @@ export default function Search(props) {
       }
     }
 
-    const handleLogout = () => {
-      destroySessionCookie();
-      props.history.push('/')
-      // update the page so the cookie actually goes away and the user can not still go to protected routes
-      window.location.reload(true); 
-    }
-
   return (
     <div className='search-wrapper'>
-      <Header onLogout={handleLogout}/>
+      <Header />
 
       <div className='search-container'>
         <h1>Search</h1>
