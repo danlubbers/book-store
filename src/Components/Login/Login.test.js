@@ -5,7 +5,7 @@ import Login from './Login';
 
 import { CookieProvider } from '../../context/cookieContext';
 import { Router } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
@@ -36,14 +36,15 @@ it('should render one two buttons', () => {
   expect(wrapper.find('button')).toHaveLength(2);
 });
 
+test('Submits Form', () => {
+  const onSubmit = jest.fn();
+  const { getByText } = render(<Login onSubmit={onSubmit}/>);
+  fireEvent.click(getByText(/Login/i));
+  expect(onSubmit).toHaveBeenCalled();
+})
 
-test('Rendering the Test API with Console logs', () => {
-  const renderResult = render(
-    <Router history={history}>
-      <CookieProvider>
-        <Login />
-      </CookieProvider>
-    </Router>);
 
-    // console.log(renderResult.container)
-});
+// test('Rendering the Test API with Console logs', () => {
+//   const renderResult = render(<Login />);
+//     // console.log(renderResult.container)
+// });
