@@ -36,13 +36,30 @@ it('should render one two buttons', () => {
   expect(wrapper.find('button')).toHaveLength(2);
 });
 
-test('Submits Form', () => {
-  const onSubmit = jest.fn();
-  const { getByText } = render(<Login onSubmit={onSubmit}/>);
-  fireEvent.click(getByText(/Login/i));
-  expect(onSubmit).toHaveBeenCalled();
-})
+// All this crap here is to silence the errors even though the test passees
+describe('Submit', () => {
+  let emit;
 
+  beforeAll(() => {
+    ({ emit } = window._virtualConsole);
+  });
+
+  beforeEach(() => {
+    window._virtualConsole.emit = jest.fn();
+  });
+
+  afterAll(() => {
+    window._virtualConsole.emit = emit;
+  });
+
+  // This is the actual test
+  test('Submits Form', () => {
+    const onSubmit = jest.fn();
+    const { getByText } = render(<Login onSubmit={onSubmit}/>);
+    fireEvent.click(getByText(/Login/i));
+    expect(onSubmit).toHaveBeenCalled();
+  })
+});
 
 // test('Rendering the Test API with Console logs', () => {
 //   const renderResult = render(<Login />);
