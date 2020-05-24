@@ -2,13 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import Login from './Login';
-
-import { CookieProvider } from '../../context/cookieContext';
-import { Router } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
-import { createBrowserHistory } from 'history';
-
-const history = createBrowserHistory();
 
 // Using react dom testing - This test takes 21ms whereas Emzyme takes 2ms.
 // it('renders without crashing', () => {

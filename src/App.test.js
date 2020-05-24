@@ -4,7 +4,7 @@ import App from './App';
 import { CookieProvider } from './context/cookieContext';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory, createMemoryHistory } from 'history'; 
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 const history = createBrowserHistory();
 const historyMemory = createMemoryHistory();
@@ -58,3 +58,16 @@ test('Redirects to the correct page', () => {
 
     console.log(renderResult)
 });
+
+// test('Clicking on Login Button', () => {
+//   const onClick = jest.fn();
+//   const renderResult = render(
+//     <Router history={history}>
+//       <CookieProvider>
+//         <App onClick={onClick}/>
+//       </CookieProvider>
+//     </Router>
+//     );
+//   fireEvent.click(renderResult.getByText(/Login/i));
+//   expect(onClick).toHaveBeenCalled();
+// })
